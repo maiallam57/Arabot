@@ -38,6 +38,7 @@ a:hover {
     color: black;
     text-decoration: none;
 }
+
 .card {
     border-radius: 5px;
     border: solid 1px var(--main-color);
@@ -95,10 +96,22 @@ a:hover {
 }
 
 .btn-main:hover {
-    background-color: #5475E5;
+    background-color: #1C3FB7;
 }
 
 
+.btn-secondary {
+    background-color: #E1E8FF;
+    padding: 7px 20px;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.btn-secondary:hover {
+    background-color: #ADBCF2;
+}
 
 .btn-danger {
     background-color: #c81e1e;
