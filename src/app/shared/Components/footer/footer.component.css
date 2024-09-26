@@ -1,0 +1,65 @@
+a i {
+    cursor: pointer;
+    /* Equivalent to Tailwind's cursor-pointer */
+    display: block;
+    /* Equivalent to Tailwind's block */
+    padding: 0.75rem;
+    /* py-2 (0.5rem) and px-3 (0.75rem) */
+    color: #1f2937;
+    /* text-gray-900 */
+    border-radius: 50%;
+    background-color: #f0f1f9;
+    /* rounded */
+    transition: all 0.3s ease, color 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+a:hover i {
+    color: #3b82f6;
+    font-weight: 800;
+    /* font-extrabold */
+}
+
+@media (min-width: 1024px) {
+
+    /* md: */
+    a:hover {
+        background-color: transparent;
+        /* md:bg-transparent */
+        border: none;
+        /* md:border-0 */
+        color: #3b82f6;
+        /* md:hover:text-blue-700 */
+    }
+
+    /* Dark mode styles */
+    a {
+        color: white;
+        /* dark:text-white */
+    }
+
+    a:hover {
+        color: #3b82f6;
+        /* md:dark:hover:text-blue-500 */
+    }
+}
+
+ul {
+    padding-left: 0.75rem;
+    /* px-3 */
+    padding-right: 0.75rem;
+    /* px-3 */
+}
+
+li {
+    padding-top: 0.5rem;
+    /* py-2 (0.5rem) */
+    padding-bottom: 0.5rem;
+    /* py-2 (0.5rem) */
+    display: inline-block;
+    /* lg:inline-block */
+    padding-left: 0.75rem;
+    /* px-3 */
+    padding-right: 0.75rem;
+    /* px-3 */
+}
