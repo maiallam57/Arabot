@@ -1,1 +1,62 @@
-<p>navbar works!</p>
+<nav class="dark:bg-gray-900 items-center text-center m-auto">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a routerLink="/overview" class="flex items-center space-x-3 rtl:space-x-reverse me-4">
+            <img src="assets/logos/Arabot Logo.svg" class="h-8" alt="Logo" />
+        </a>
+        <button data-collapse-toggle="navbar-default" type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M1 1h15M1 7h15M1 13h15" />
+            </svg>
+        </button>
+        <div class="hidden w-full lg:w-10/12 lg:flex lg:justify-between" id="navbar-default">
+
+            <div class="md:text-center mx-auto">
+                <ul>
+                    <li>
+                        <a routerLink="/overview" routerLinkActive="active">Overview</a>
+                    </li>
+                    <li>
+                        <a routerLink="/team" routerLinkActive="active">Team</a>
+                    </li>
+                    <li>
+                        <a routerLink="/resources" routerLinkActive="active">Resources</a>
+                    </li>
+                    <li>
+                        <a routerLink="/learn" routerLinkActive="active">Learn</a>
+                    </li>
+                    <li>
+                        <a>English
+                            <img src="assets/images/Flag_of_the_United_States.svg.webp" alt="Us flag">
+                        </a>
+                    </li>
+                    <li>
+                        <a>Arabic
+                            <img src="assets/images/sa flag.png" alt="Arabic flag">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <ul>
+                    @if(!loggedUser){
+                    <li>
+                        <a routerLink="/register" routerLinkActive="active">Register</a>
+                    </li>
+                    }
+                    @if(loggedUser){
+                    <li>
+                        <a (click)="signout()">SignOut</a>
+                    </li>
+                    }
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</nav>
