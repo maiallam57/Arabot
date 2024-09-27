@@ -1,9 +1,9 @@
-<section class="flex flex-col gap-12 justify-between mb-10">
+<section class="flex flex-col gap-12 justify-between">
     <div class="h-[90vh] flex flex-col items-center justify-center">
         <div class="text-center mx-auto items-center">
             <div class="flex flex-col gap-5 justify-between mb-10">
                 <div class="flex gap-1 mx-auto w-fit items-center">
-                    <h2 class="text-main font-bold text-2xl">Arabot</h2>
+                    <h2 class="text-main font-bold text-3xl">Arabot</h2>
                     <img src="assets/images/title.png" alt="title" />
                 </div>
                 <h3 class="text-5xl font-bold">
@@ -14,8 +14,8 @@
                     brainstorming, and
                     more.</p>
                 <div class="flex gap-3 mx-auto w-fit items-center">
-                    <button class="w-[200px] btn-main">Chat in Arabic</button>
-                    <button class="w-[200px] btn-secondary">Explain Topic</button>
+                    <button routerLink="/chatInArabic" class="w-[200px] btn-main">Chat in Arabic</button>
+                    <button routerLink="/explainTopic" class="w-[200px] btn-secondary">Explain Topic</button>
                 </div>
             </div>
         </div>
@@ -50,4 +50,5 @@
                 student learning through interactive, engaging methods</p>
         </div>
     </div>
+    <app-footer></app-footer>
 </section>
