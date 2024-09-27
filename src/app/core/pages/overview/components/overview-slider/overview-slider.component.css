@@ -1,0 +1,7 @@
+h6 {
+    cursor: pointer;
+}
+
+h6:hover {
+    text-decoration: underline;
+}
