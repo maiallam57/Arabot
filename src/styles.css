@@ -54,11 +54,13 @@ a:hover {
     box-shadow: 0 0 10px #1C3FB7;
 }
 
-.card img {
+.card img,
+.card i {
     transition: all 0.5s;
 }
 
-.card img:hover {
+.card img:hover,
+.card i:hover {
     transform: scale(1.1);
 }
 
