@@ -1,1 +1,42 @@
-<p>register works!</p>
+<div class="flex flex-col gap-5 justify-between mb-20">
+    <div class="flex gap-1 mx-auto w-fit items-center mb-10">
+        <h2 class="text-main font-bold text-3xl">Register</h2>
+        <img src="assets/images/title.png" alt="title" />
+    </div>
+
+    <div class="mx-auto w-2/3">
+        <form>
+            <div class="mb-6">
+                <input type="text" id="name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Name" required />
+            </div>
+            <div class="mb-6">
+                <input type="email" id="email"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Email Address" required />
+            </div>
+            <div class="mb-6">
+                <input type="password" id="password"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Password" required />
+            </div>
+            <div class="mb-6">
+                <input type="password" id="confirm_password"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Confirm Password" required />
+            </div>
+            <div class="mb-6">
+                <select id="gender"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected disabled>Gender</option>
+                    <option value="male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+        </form>
+        <div class="w-fit ms-auto">
+            <button type="submit" class="w-[200px] btn-main">Submit</button>
+        </div>
+    </div>
+</div>
