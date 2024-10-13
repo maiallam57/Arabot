@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { TitleComponent } from "../../../shared/Components/UI/title/title.component";
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ChatbotInputComponent } from "../../../shared/Components/UI/chatbot-input/chatbot-input.component";
 
 @Component({
   selector: 'app-chat-with-your-book',
   standalone: true,
-  imports: [TitleComponent],
+  imports: [TitleComponent, ChatbotInputComponent],
   templateUrl: './chat-with-your-book.component.html',
   styleUrl: './chat-with-your-book.component.css'
 })
