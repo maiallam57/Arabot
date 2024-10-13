@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { TitleComponent } from "../../../shared/Components/UI/title/title.component";
+import { CardItemComponent } from "../../../shared/Components/card-item/card-item.component";
 
 @Component({
   selector: 'app-arabic-for-kids',
   standalone: true,
-  imports: [TitleComponent],
+  imports: [TitleComponent, CardItemComponent],
   templateUrl: './arabic-for-kids.component.html',
   styleUrl: './arabic-for-kids.component.css'
 })
