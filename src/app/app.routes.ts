@@ -22,6 +22,7 @@ import { HousekitchenSchoolComponent } from './features/pages/arabic-for-kids/co
 import { FacialExpressionsComponent } from './features/pages/arabic-for-kids/components/facial-expressions/facial-expressions.component';
 import { TimeComponent } from './features/pages/arabic-for-kids/components/time/time.component';
 import { WeekdaysAndMonthsComponent } from './features/pages/arabic-for-kids/components/weekdays-and-months/weekdays-and-months.component';
+import { ExplaintopicFeatureComponent } from './shared/Components/explaintopic-feature/explaintopic-feature.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: "overview", pathMatch: "full" },
@@ -31,13 +32,16 @@ export const routes: Routes = [
     { path: "learn", component: LearnComponent, title: "Learn" },
     { path: "resources", component: ResourcesComponent, title: "Resources" },
     { path: "chatInArabic", component: ChatInArabicComponent, title: "Chat In Arabic" },
+
     { path: "explainTopic", component: ExplainTopicsComponent, title: "Explain Topic" },
+    { path: "SentenceStructure", component: ExplaintopicFeatureComponent, title: "Sentence Structure" },
+    { path: "GrammarInArabic", component: ExplaintopicFeatureComponent, title: "Grammar In Arabic" },
+    { path: "ParsingInArabic", component: ExplaintopicFeatureComponent, title: "Parsing In Arabic" },
 
     { path: "arabicForKids", component: ArabicForKidsComponent, title: "Arabic For Kids" },
     { path: "alphabets", component: AlphabetsComponent, title: "Alphabets" },
     { path: "numbers", component: NumbersComponent, title: "Numbers" },
     { path: "animals", component: AnimalsComponent, title: "Animals" },
-
     { path: "Fruitsandvegetables", component: AnimalsComponent, title: "Fruits And Vegetables" },
     { path: "Colors", component: ColorsComponent, title: "Colors" },
     { path: "FamilyMembers", component: FamilyMembersComponent, title: "Family Members" },
