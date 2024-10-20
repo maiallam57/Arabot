@@ -23,6 +23,12 @@ import { FacialExpressionsComponent } from './features/pages/arabic-for-kids/com
 import { TimeComponent } from './features/pages/arabic-for-kids/components/time/time.component';
 import { WeekdaysAndMonthsComponent } from './features/pages/arabic-for-kids/components/weekdays-and-months/weekdays-and-months.component';
 import { ExplaintopicFeatureComponent } from './shared/Components/explaintopic-feature/explaintopic-feature.component';
+import { PrayerTimingsComponent } from './features/pages/mini-muslim/components/prayer-timings/prayer-timings.component';
+import { HolyQuranComponent } from './features/pages/mini-muslim/components/holy-quran/holy-quran.component';
+import { HolyQuranAudioComponent } from './features/pages/mini-muslim/components/holy-quran-audio/holy-quran-audio.component';
+import { TafsirComponent } from './features/pages/mini-muslim/components/tafsir/tafsir.component';
+import { HadithsComponent } from './features/pages/mini-muslim/components/hadiths/hadiths.component';
+import { AzkarComponent } from './features/pages/mini-muslim/components/azkar/azkar.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: "overview", pathMatch: "full" },
@@ -54,11 +60,14 @@ export const routes: Routes = [
 
     { path: "learnArabic", component: LearnArabicComponent, title: "Learn Arabic" },
     { path: "chatWithYourBook", component: ChatWithYourBookComponent, title: "Chat With Your Book" },
+
     { path: "miniMuslim", component: MiniMuslimComponent, title: "Mini Muslim" },
-
-
-
-
+    { path: "PrayerTimings", component: PrayerTimingsComponent, title: "Prayer Timings" },
+    { path: "HolyQuran", component: HolyQuranComponent, title: "Holy Quran" },
+    { path: "HolyQuranAudio", component: HolyQuranAudioComponent, title: "Holy Quran  Audio" },
+    { path: "Tafsir", component: TafsirComponent, title: "Tafsir" },
+    { path: "Hadiths", component: HadithsComponent, title: "Hadiths" },
+    { path: "Azkar", component: AzkarComponent, title: "Azkar" },
 
 
 

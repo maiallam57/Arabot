@@ -1,4 +1,4 @@
-<div class="flex justify-start gap-3 px-10 my-10">
+<div class="flex justify-start gap-3 px-10 py-10 bg-[#E1E8FF]">
     <div class="w-1/5 px-5 my-auto">
         @if (IsMale) {
         <img src="assets/images/FullAvatarBoy.png" class="w-full" alt="AvatarBoy image">
@@ -8,7 +8,21 @@
         <img src="assets/images/FullAvatarGirl.png" class="w-full" alt="AvatarGirl image">
         }
     </div>
-    <div>
 
+    <div class="flex flex-col gap-0 justify-center mx-auto">
+        <div class="flex gap-10 mx-auto">
+            <app-card-item [img]="'assets/images/Prayer Timings.png'" [title]="'Prayer Timings'"
+                routerLink="/PrayerTimings"></app-card-item>
+            <app-card-item [img]="'assets/images/Holy Quran.png'" [title]="'Holy Quran'"
+                routerLink="/HolyQuran"></app-card-item>
+            <app-card-item [img]="'assets/images/Holy Quran Audio.png'" [title]="'Holy Quran Audio'"
+                routerLink="/HolyQuranAudio"></app-card-item>
+        </div>
+        <div class="flex gap-10 mx-auto">
+            <app-card-item [img]="'assets/images/Tafsir.png'" [title]="'Tafsir'" routerLink="/Tafsir"></app-card-item>
+            <app-card-item [img]="'assets/images/Hadiths.png'" [title]="'Hadiths'"
+                routerLink="/Hadiths"></app-card-item>
+            <app-card-item [img]="'assets/images/Azkar.png'" [title]="'Azkar'" routerLink="/Azkar"></app-card-item>
+        </div>
     </div>
 </div>
