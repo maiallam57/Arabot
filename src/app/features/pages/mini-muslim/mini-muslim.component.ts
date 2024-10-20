@@ -9,6 +9,7 @@ import { TitleComponent } from "../../../shared/Components/UI/title/title.compon
   styleUrl: './mini-muslim.component.css'
 })
 export class MiniMuslimComponent {
+  IsMale: Boolean = true;
   title: string = "Mini Muslim";
   desc: string = "Amazing Adventure ";
 }
