@@ -6,15 +6,16 @@
         <img src="assets/images/AvatarGirl.png" class="w-full" alt="AvatarGirl image">
         }
     </div>
-    <div class="flex flex-col justify-between gap-3 w-3/4 px-5">
-        <div class="flex flex-col gap-3 p-3">
-            @if (IsInput) {
-            <app-chat-placeholder [color]="userColor" [text]="UserInput" [user]="true"></app-chat-placeholder>
-            }
-            @if (IsResponse) {
-            <app-chat-placeholder [color]="chatColor" [text]="chatResponse" [user]="false"></app-chat-placeholder>
+    <div class="flex flex-col justify-end gap-3 w-3/4 px-5">
+        <div #scrollContainer class="max-h-[70vh] w-full overflow-y-auto overflow-x-hidden">
+            @for (item of questions; track $index) {
+            <div class="flex flex-col gap-3 p-3">
+                <app-chat-placeholder [color]="userColor" [text]="item" [user]="true"></app-chat-placeholder>
+                <app-chat-placeholder [color]="chatColor" [text]="answers[$index]"
+                    [user]="false"></app-chat-placeholder>
+            </div>
             }
         </div>
-        <app-chatbot-input></app-chatbot-input>
+        <app-chatbot-input (question)="receiveInputValue($event)"></app-chatbot-input>
     </div>
 </div>

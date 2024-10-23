@@ -1,10 +1,25 @@
-<div class="">
+<div class="text-right">
     @if (user) {
-    <h3 class="p-3 w-fit rounded-lg bg-[{{color}}] font-bold text-xl">{{text}}</h3>
-    }@else {
-    <div class="flex justify-between items-start">
-        <img src="assets/images/title.png" width="30px" height="30px" alt="Arabot Logo">
-        <h3 class="p-3 w-fit rounded-lg bg-[{{color}}] text-xl">{{text}}</h3>
+    <div class="flex flex-col items-start justify-between">
+        <h3 class="p-3 w-fit rounded-lg bg-[{{color}}] font-bold text-xl">{{text}}</h3>
+        <button (click)="synthesizeText()"><i class="fa-solid fa-volume-high pt-2 px-2 pb-3 voice"></i></button>
+        <div *ngIf="audioUrl">
+            <audio [src]="audioUrl" controls></audio>
+        </div>
     </div>
+    }@else {
+    <div class="flex flex-col items-end justify-between">
+        <div class="flex justify-end items-start">
+            <img src="assets/images/title.png" width="30px" height="30px" alt="Arabot Logo">
+            <h3 class="p-3 w-fit rounded-lg bg-[{{color}}] text-xl">
+                {{text| breakLine}}
+            </h3>
+        </div>
+        <button (click)="synthesizeText()"><i class="fa-solid fa-volume-high pt-2 px-2 pb-3 voice"></i></button>
+        <div *ngIf="audioUrl">
+            <audio [src]="audioUrl" controls></audio>
+        </div>
+    </div>
+
     }
 </div>
