@@ -1,3 +1,53 @@
 <div class="my-14">
     <app-title [title]="title" [desc]="desc"></app-title>
+
+
+    <div class="mx-14">
+        <!-- <div class="container mx-auto p-6">
+            <h1 class="text-2xl font-bold mb-4">Hadiths by <span class="text-main">{{ hadithData.name }}</span></h1>
+            <div class="mt-4 space-y-4">
+                <div *ngFor="let hadith of hadithData.items" class="p-4 border rounded-lg shadow">
+                    <h2 class=" font-semibold">Hadith #{{ hadith.number }}</h2>
+                    <p class="text-xl text-main"><strong class="text-gray-600">Arabic:</strong> {{ hadith.arab }}</p>
+                    <p class="text-gray-600"><strong>Explanation:</strong> {{ hadith.id }}</p>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="container mx-auto p-6">
+            <h1 class="text-2xl font-bold mb-4">Hadiths by <span class="text-main">{{ hadithData.name }}</span></h1>
+            <div class="mt-4 space-y-4">
+                <div *ngFor="let hadith of hadithData.items" class="p-4 border rounded-lg shadow">
+                    <h2 class="text-lg font-semibold">Hadith #{{ hadith.number }}</h2>
+                    <p class="text-xl text-main"><strong class="text-gray-600">Arabic:</strong> {{ hadith.arab }}</p>
+                    <p class="text-gray-600"><strong>Explanation:</strong> {{ hadith.id }}</p>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center mt-6">
+                <button (click)="goToPage(hadithData.pagination.currentPage - 1)"
+                    class="bg-blue-500 text-white py-2 px-4 rounded disabled:opacity-50"
+                    [disabled]="hadithData.pagination.currentPage === 1">
+                    Previous
+                </button>
+
+                <div class="flex space-x-2">
+                    <button *ngFor="let page of hadithData.pagination.pages" (click)="goToPage(page)"
+                        [ngClass]="{'bg-blue-500 text-white': isCurrentPage(page), 'bg-gray-200 text-gray-700': !isCurrentPage(page)}"
+                        class="py-2 px-4 rounded">
+                        {{ page }}
+                    </button>
+                </div>
+
+                <button (click)="goToPage(hadithData.pagination.currentPage + 1)"
+                    class="bg-blue-500 text-white py-2 px-4 rounded disabled:opacity-50"
+                    [disabled]="hadithData.pagination.currentPage === hadithData.pagination.totalPages">
+                    Next
+                </button>
+            </div>
+        </div>
+
+
+
+    </div>
 </div>
