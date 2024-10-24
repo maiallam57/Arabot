@@ -1,3 +1,16 @@
 <div class="my-14">
     <app-title [title]="title" [desc]="desc"></app-title>
+    <div class="mx-14">
+        <div class="container px-4 mt-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Loop over the audioList -->
+                @for (audio of audioList; track $index) {
+                <div class="text-left w-full bg-white shadow-md rounded-lg p-4 border border-gray-200">
+                    <h2 class="text-xl text-main font-bold mb-1">{{ surahList[$index] }}</h2>
+                    <audio class="px-3 mx-auto" [src]="audio.audio_url" controls></audio>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>

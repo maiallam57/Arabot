@@ -13,7 +13,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './surah.component.css'
 })
 export class SurahComponent implements OnInit, OnDestroy {
-  // @Input() 
   surahNumber!: number;
 
   private readonly _miniMuslimService = inject(MiniMuslimService);
@@ -29,7 +28,6 @@ export class SurahComponent implements OnInit, OnDestroy {
     this._miniMuslimService.getHolyQuran((this.surahNumber.toString())).subscribe({
       next: (res) => {
         this.surah = res.data;
-        console.log(this.surah);
       },
       error: (err) => {
         console.log(err);
