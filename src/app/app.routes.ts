@@ -30,6 +30,7 @@ import { TafsirComponent } from './features/pages/mini-muslim/components/tafsir/
 import { HadithsComponent } from './features/pages/mini-muslim/components/hadiths/hadiths.component';
 import { AzkarComponent } from './features/pages/mini-muslim/components/azkar/azkar.component';
 import { SurahComponent } from './features/pages/mini-muslim/components/holy-quran/components/surah/surah.component';
+import { TafsirSurahComponent } from './features/pages/mini-muslim/components/tafsir/components/tafsir-surah/tafsir-surah.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: "overview", pathMatch: "full" },
@@ -68,7 +69,11 @@ export const routes: Routes = [
     { path: 'surah/:number', component: SurahComponent },
 
     { path: "HolyQuranAudio", component: HolyQuranAudioComponent, title: "Holy Quran  Audio" },
+
     { path: "Tafsir", component: TafsirComponent, title: "Tafsir" },
+    { path: 'tafsir/:number', component: TafsirSurahComponent },
+
+
     { path: "Hadiths", component: HadithsComponent, title: "Hadiths" },
     { path: "Azkar", component: AzkarComponent, title: "Azkar" },
 

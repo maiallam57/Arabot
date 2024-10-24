@@ -1,0 +1,22 @@
+<div class="m-14">
+    <div class="container mx-auto px-4 py-6 text-right">
+        <div *ngFor="let verse of ayat" class="w-full mb-8 border-b pb-4">
+            <h3 class="text-left text-lg font-bold text-gray-800">Surah {{ verse.sura }}, Ayah {{ verse.aya }}</h3>
+
+            <!-- Arabic Text -->
+            <p class="text-right text-2xl font-semibold text-blue-700 my-4">
+                {{ verse.arabic_text }}
+            </p>
+
+            <!-- Translation -->
+            <p class="text-gray-600 text-xl mb-4">
+                {{ verse.translation }}
+            </p>
+
+            <!-- Footnotes (if available) -->
+            <div *ngIf="verse.footnotes" class="text-sm text-gray-500">
+                Footnote: {{ verse.footnotes }}
+            </div>
+        </div>
+    </div>
+</div>
