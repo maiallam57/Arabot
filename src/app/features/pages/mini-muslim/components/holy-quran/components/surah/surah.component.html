@@ -1,0 +1,26 @@
+<div class="m-14 p-10">
+    <!-- Surah Header -->
+    <div class="flex flex-col gap-5 justify-between mb-10 bg-[#E1E8FF] rounded-xl w-2/3 mx-auto text-center p-5">
+        <div *ngIf="surah" class="text-center my-3">
+            <h1 class="text-4xl font-bold mb-2">{{ surah?.englishName }} ({{ surah?.name }})</h1>
+            <p class="italic mb-2 text-lg">{{ surah?.englishNameTranslation }}</p>
+            <p class="text-gray-600">Revelation Type: {{ surah?.revelationType }}</p>
+        </div>
+
+    </div>
+
+    <!-- Surah Ayahs Block -->
+    <div class="bg-gray-50 p-6 rounded-lg shadow-lg w-fit mx-auto">
+        <p class="text-3xl font-bold mb-3 text-center">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</p>
+        <p class="text-right text-2xl leading-relaxed">
+            <!-- Loop through each Ayah and display it with a rounded number -->
+            <span *ngFor="let ayah of surah?.ayahs" class=" my-4">
+                <span>{{ ayah.text | surah}}</span>
+                <!-- Ayah number as rounded pill -->
+                <span class="text-center ms-1 bg-[#E1E8FF] rounded-full px-2 py-1 text-sm">
+                    {{ ayah.numberInSurah }}
+                </span>
+            </span>
+        </p>
+    </div>
+</div>

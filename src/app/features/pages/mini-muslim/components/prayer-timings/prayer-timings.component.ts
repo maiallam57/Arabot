@@ -2,10 +2,9 @@ import { MiniMuslimService } from './../../../../services/mini-muslim.service';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { TitleComponent } from "../../../../../shared/Components/UI/title/title.component";
 import { Subscription } from 'rxjs';
-import { CommonModule, KeyValuePipe, NgClass, NgFor, NgIf } from '@angular/common';
+import { CommonModule, KeyValuePipe, NgClass } from '@angular/common';
 import { PrayerTimings } from '../../../../../shared/interfaces/prayer-timings';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-prayer-timings',

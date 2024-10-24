@@ -1,3 +1,12 @@
 <div class="my-14">
     <app-title [title]="title" [desc]="desc"></app-title>
+
+    <div class="mx-14">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            @for (item of surahList; track $index) {
+            <app-small-card [surah]="item.name" [routerLink]="['/surah', item.number]"></app-small-card>
+            }
+        </div>
+    </div>
+
 </div>
