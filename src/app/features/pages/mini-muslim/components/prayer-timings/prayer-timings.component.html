@@ -1,7 +1,16 @@
 <div class="my-14">
     <app-title [title]="title" [desc]="desc"></app-title>
     <div class="mx-14">
-        <div class="container mx-auto p-4">
+        <div class="container mx-auto px-4">
+            <form [formGroup]="dateForm" (ngSubmit)="onDateSubmit()" class="flex justify-center gap-3 text-center py-3">
+                <div class="form-group">
+                    <input type="date" id="selectedDate"
+                        [ngClass]="{'border-red-500': dateForm.get('selectedDate')?.invalid && dateForm.get('selectedDate')?.touched}"
+                        formControlName="selectedDate" class="border-none">
+                </div>
+                <button type="submit" class="btn-main" [disabled]="dateForm.invalid">Get Prayer Timings</button>
+            </form>
+
             <div class="text-center">
                 <p class="text-2xl"><strong>Gregorian:</strong> {{ prayerData.data.date.gregorian.date }} -
                     <strong>Hijri:</strong> ({{prayerData.data.date.hijri.date }})

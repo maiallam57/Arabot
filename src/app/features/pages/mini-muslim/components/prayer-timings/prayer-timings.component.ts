@@ -37,42 +37,42 @@ export class PrayerTimingsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // Initialize form
     this.dateForm = this.fb.group({
-      selectedDate: [new Date()]
+      selectedDate: ['']
     });
-
-    this.fetchPrayerTimings(this.formatDate(new Date()));
+    this.dateForm.get('selectedDate')?.setValue(new Date()); // Set today's date
+    this.dateForm.get('selectedDate')?.value;
+    this.onDateSubmit()
   }
 
-  fetchPrayerTimings(date: string): void {
-    this.getPrayerTimingsSub = this._miniMuslimService.getPrayerTimings(date, 'cairo', 'egypt').subscribe({
-      next: (res) => {
-        this.prayerData = res;
-        console.log(this.prayerData);
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
-  }
-
-  formatDate(date: Date): string {
-    const day = ('0' + date.getDate()).slice(-2);
-    const month = ('0' + (date.getMonth() + 1)).slice(-2);
-    const year = date.getFullYear();
-    return `${day}-${month}-${year}`;
-  }
-
-  // Function to handle date selection and submit form
-  onDateSubmit(): void {
+  onDateSubmit() {
     const selectedDate = this.dateForm.get('selectedDate')?.value;
-    const formattedDate = this.formatDate(selectedDate);
-    this.fetchPrayerTimings(formattedDate);
+    if (selectedDate) {
+      const formattedDate = this.formatDate(selectedDate);
+      this.getPrayerTimingsSub = this._miniMuslimService.getPrayerTimings(formattedDate, "cairo", "egypt").subscribe({
+        next: (res) => {
+          this.prayerData = res;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+    }
+  }
+
+  private formatDate(date: Date | string): string {
+    const d = new Date(date);
+    const day = String(d.getDate()).padStart(2, '0');
+    const month = String(d.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed
+    const year = d.getFullYear();
+    return `${day}-${month}-${year}`; // Format as DD-MM-YYYY
   }
 
   // Function to get the icon for a prayer time
   getIconForPrayer(prayerName: string): string {
     return this.prayerIcons[prayerName] || this.prayerIcons['default'];
   }
+
+
   ngOnDestroy(): void {
     this.getPrayerTimingsSub?.unsubscribe();
   }
