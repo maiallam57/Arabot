@@ -5,10 +5,10 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class E3rabService {
+export class ChatService {
 
   private readonly _httpClient = inject(HttpClient);
-  private baseUrl: string = "http://127.0.0.1:8000/api/v1/arabot?question=";
+  private baseUrl: string = "http://127.0.0.1:8000/api/v1/arabot";
 
 
   getArabotAnswer(question: string): Observable<any> {

@@ -1,10 +1,10 @@
 import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { ChatbotInputComponent } from "../UI/chatbot-input/chatbot-input.component";
 import { ChatPlaceholderComponent } from '../chat-placeholder/chat-placeholder.component';
-import { E3rabService } from '../../../features/services/e3rab.service';
 import { Subscription } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BreakLinePipe } from '../../pipes/break-line.pipe';
+import { ChatService } from '../../../features/services/chat.service';
 
 @Component({
   selector: 'app-explaintopic-feature',
@@ -26,7 +26,7 @@ export class ExplaintopicFeatureComponent {
   userColor: string = "#ADBCF2";
   chatColor: string = "#E1E8FF";
 
-  private readonly _e3rabService = inject(E3rabService);
+  private readonly _chatService = inject(ChatService);
   inputFormSub!: Subscription;
 
   receiveInputValue(value: string) {
@@ -36,7 +36,7 @@ export class ExplaintopicFeatureComponent {
   }
 
   callApi(): void {
-    this.inputFormSub = this._e3rabService.getArabotAnswer(this.question).subscribe({
+    this.inputFormSub = this._chatService.getArabotAnswer(this.question).subscribe({
       next: (res) => {
         this.answers.push(res.response);
         console.log(res.response);
